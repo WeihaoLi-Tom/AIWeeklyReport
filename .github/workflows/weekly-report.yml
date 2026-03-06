@@ -14,6 +14,7 @@ env:
   DIFY_APP_TYPE: chat
   DIFY_USER: github-actions-bot
   DIFY_RESPONSE_MODE: streaming
+  DIFY_RETRY_MAX_ATTEMPTS: "5"
   REPORT_AUTO_GENERATE: "true"
   REPORT_AUTO_OPEN: "false"
   REPORT_LATEST: "1"
@@ -56,14 +57,14 @@ jobs:
           R2_KEY_PREFIX: ${{ secrets.R2_KEY_PREFIX }}
           R2_PRESIGN_EXPIRES: ${{ secrets.R2_PRESIGN_EXPIRES }}
         run: |
-          output=$(python dify_workflow_scheduler.py --mode once 2>&1)
-          echo "$output"
-          if echo "$output" | grep -q '\[run 1\] failed'; then
+          set -o pipefail
+          python dify_workflow_scheduler.py --mode once 2>&1 | tee .ci-output/scheduler.log
+          if rg -q '\[run 1\] failed' .ci-output/scheduler.log; then
             echo "Scheduler run failed. See logs above."
             exit 1
           fi
           # Extract R2 presigned URL if present
-          url=$(echo "$output" | grep -oP '\[R2_LINK\]\Khttps?://[^\s]+' | tail -1)
+          url=$(rg -o '\[R2_LINK\]https?://\S+' .ci-output/scheduler.log | sed 's/^\[R2_LINK\]//' | tail -1)
           r2_enabled=$(echo "${R2_ENABLED:-false}" | tr '[:upper:]' '[:lower:]')
           if [ "$r2_enabled" = "true" ] && [ -z "$url" ]; then
             echo "R2 is enabled but no presigned URL was generated."
@@ -75,6 +76,13 @@ jobs:
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "[Open report]($url)" >> $GITHUB_STEP_SUMMARY
           fi
+
+      - name: Upload scheduler log artifact
+        uses: actions/upload-artifact@v4
+        if: always() && hashFiles('.ci-output/scheduler.log') != ''
+        with:
+          name: scheduler-log-${{ github.run_id }}
+          path: .ci-output/scheduler.log
 
       - name: Upload report artifact
         uses: actions/upload-artifact@v4

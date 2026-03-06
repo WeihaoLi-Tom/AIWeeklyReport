@@ -1,0 +1,5 @@
+.env
+.ci-output/
+deploy/
+__pycache__/
+*.pyc
