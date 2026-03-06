@@ -150,7 +150,36 @@ def extract_structured_output(result: Dict[str, Any]) -> Any:
     return result
 
 
-def call_dify_app(
+def should_retry_dify_error(ex: Exception) -> bool:
+    message = str(ex).lower()
+    retry_status_codes = (500, 502, 503, 504, 520, 521, 522, 523, 524, 525, 526)
+    if any(f"http {code}" in message for code in retry_status_codes):
+        return True
+
+    retry_markers = (
+        "timed out",
+        "timeout",
+        "connection aborted",
+        "connection reset",
+        "bad gateway",
+        "gateway timeout",
+        "service unavailable",
+        "temporarily unavailable",
+        "cloudflare",
+        "max retries exceeded",
+    )
+    return any(marker in message for marker in retry_markers)
+
+
+def get_dify_retry_max_attempts() -> int:
+    raw = os.getenv("DIFY_RETRY_MAX_ATTEMPTS", "3").strip()
+    try:
+        return max(1, int(raw))
+    except ValueError:
+        return 3
+
+
+def call_dify_app_once(
     base_url: str,
     api_key: str,
     app_type: str,
@@ -349,6 +378,51 @@ def call_dify_app(
             raise RuntimeError(f"HTTP {ex.code}: {detail}") from ex
         except error.URLError as ex:
             raise RuntimeError(f"Network error: {ex}") from ex
+
+
+def call_dify_app(
+    base_url: str,
+    api_key: str,
+    app_type: str,
+    query: str,
+    inputs: Dict[str, Any],
+    user: str,
+    conversation_id: Optional[str] = None,
+    response_mode: str = "blocking",
+) -> Dict[str, Any]:
+    max_attempts = get_dify_retry_max_attempts()
+    retry_delays = [2, 5, 10]
+
+    last_error: Optional[Exception] = None
+    for attempt in range(1, max_attempts + 1):
+        try:
+            return call_dify_app_once(
+                base_url=base_url,
+                api_key=api_key,
+                app_type=app_type,
+                query=query,
+                inputs=inputs,
+                user=user,
+                conversation_id=conversation_id,
+                response_mode=response_mode,
+            )
+        except Exception as ex:
+            last_error = ex
+            should_retry = should_retry_dify_error(ex)
+            if attempt >= max_attempts or not should_retry:
+                raise
+
+            delay_seconds = retry_delays[min(attempt - 1, len(retry_delays) - 1)]
+            print(
+                f"[Dify] transient error on attempt {attempt}/{max_attempts}: {ex}",
+                file=sys.stderr,
+            )
+            print(f"[Dify] retrying in {delay_seconds}s...", file=sys.stderr)
+            time.sleep(delay_seconds)
+
+    if last_error:
+        raise last_error
+    raise RuntimeError("Dify call failed without an explicit error")
 
 
 # ---------------------------------------------------------------------------
