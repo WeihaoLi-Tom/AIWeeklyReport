@@ -16,8 +16,9 @@ env:
   DIFY_RESPONSE_MODE: blocking
   REPORT_AUTO_GENERATE: "true"
   REPORT_AUTO_OPEN: "false"
-  OUTPUT_FILE: workflow_runs.jsonl
-  REPORT_OUTPUT_FILE: workflow_report.html
+  REPORT_LATEST: "1"
+  OUTPUT_FILE: .ci-output/workflow_runs.jsonl
+  REPORT_OUTPUT_FILE: .ci-output/workflow_report.html
 
 jobs:
   run-report:
@@ -33,6 +34,11 @@ jobs:
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Prepare clean output directory
+        run: |
+          rm -rf .ci-output
+          mkdir -p .ci-output
 
       - name: Run Dify workflow scheduler
         id: run-scheduler
@@ -52,8 +58,17 @@ jobs:
         run: |
           output=$(python dify_workflow_scheduler.py --mode once 2>&1)
           echo "$output"
+          if echo "$output" | grep -q '\[run 1\] failed'; then
+            echo "Scheduler run failed. See logs above."
+            exit 1
+          fi
           # Extract R2 presigned URL if present
           url=$(echo "$output" | grep -oP '\[R2_LINK\]\Khttps?://[^\s]+' | tail -1)
+          r2_enabled=$(echo "${R2_ENABLED:-false}" | tr '[:upper:]' '[:lower:]')
+          if [ "$r2_enabled" = "true" ] && [ -z "$url" ]; then
+            echo "R2 is enabled but no presigned URL was generated."
+            exit 1
+          fi
           if [ -n "$url" ]; then
             echo "presigned_url=$url" >> $GITHUB_OUTPUT
             echo "### Report link (temporary, expires in ~1h)" >> $GITHUB_STEP_SUMMARY
@@ -63,19 +78,19 @@ jobs:
 
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
-        if: success() && hashFiles('workflow_report.html') != ''
+        if: success() && hashFiles('.ci-output/workflow_report.html') != ''
         with:
           name: weekly-report-${{ github.run_id }}
-          path: workflow_report.html
+          path: .ci-output/workflow_report.html
 
       - name: Prepare Pages deploy dir
-        if: success() && hashFiles('workflow_report.html') != ''
+        if: success() && hashFiles('.ci-output/workflow_report.html') != ''
         run: |
           mkdir -p deploy
-          cp workflow_report.html deploy/index.html
+          cp .ci-output/workflow_report.html deploy/index.html
 
       - name: Deploy to GitHub Pages
-        if: success() && hashFiles('workflow_report.html') != ''
+        if: success() && hashFiles('.ci-output/workflow_report.html') != ''
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -85,3 +100,11 @@ jobs:
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
           commit_message: "Deploy report ${{ github.run_id }}"
+
+      - name: Add Pages link to summary
+        if: success() && hashFiles('.ci-output/workflow_report.html') != ''
+        run: |
+          pages_url="https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/"
+          echo "### Report link (GitHub Pages)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "[Open report]($pages_url)" >> $GITHUB_STEP_SUMMARY
