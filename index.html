@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Weekly Report</title>
+  <style>
+    :root {
+      --bg: #f2f4f7;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --primary: #0b6aa6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+      padding: 20px;
+    }
+    .container { max-width: 860px; margin: 0 auto; }
+    .report-card {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      padding: 24px 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    }
+    .report-header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+    }
+    .report-header h1 {
+      margin: 0;
+      text-align: center;
+      font-size: clamp(30px, 4.2vw, 48px);
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: 0.4px;
+    }
+    .meta {
+      margin-top: 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .category-overview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      justify-content: center;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eef6fb;
+      color: #0b6aa6;
+      border: 1px solid #cde4f3;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .category-section { margin-top: 20px; }
+    .category-title-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 800;
+      color: var(--primary);
+      border-left: 4px solid var(--primary);
+      padding-left: 10px;
+    }
+    .news-item {
+      padding: 14px 0 18px;
+      border-bottom: 1px dashed #e6e6e6;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-item h3 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 2.8vw, 36px);
+      line-height: 1.45;
+    }
+    .news-item p {
+      margin: 0;
+      color: #374151;
+      font-size: clamp(20px, 2.3vw, 30px);
+    }
+    .source {
+      margin-top: 10px;
+      color: #9ca3af;
+      font-size: clamp(18px, 2vw, 26px);
+    }
+    .source-link {
+      color: #0b6aa6;
+      text-decoration: none;
+      font-size: clamp(18px, 2vw, 26px);
+      word-break: break-all;
+    }
+    .source-link:hover { text-decoration: underline; }
+    pre {
+      margin: 0;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      font-size: 12px;
+      overflow: auto;
+    }
+    @media (max-width: 768px) {
+      body { padding: 10px; line-height: 1.62; }
+      .report-card { padding: 14px 14px; border-radius: 10px; }
+      .report-header { margin-bottom: 12px; padding-bottom: 10px; }
+      .report-header h1 { font-size: 34px; line-height: 1.3; }
+      .meta { font-size: 11px; line-height: 1.5; word-break: break-word; }
+      .category-overview { margin-top: 10px; gap: 6px; }
+      .chip { font-size: 11px; padding: 3px 8px; }
+      .category-section { margin-top: 12px; }
+      .category-title-row {
+        font-size: 28px;
+        margin-bottom: 6px;
+        border-left-width: 3px;
+        padding-left: 8px;
+      }
+      .news-item { padding: 10px 0 12px; }
+      .news-item h3 { font-size: 24px; margin-bottom: 5px; line-height: 1.4; }
+      .news-item p { font-size: 19px; line-height: 1.55; }
+      .source { font-size: 17px; margin-top: 7px; }
+      .source-link { font-size: 17px; line-height: 1.45; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <article class="report-card">
+      <header class="report-header">
+        <h1>AI Weekly Report</h1>
+        <div class="meta">生成时间: 2026-03-06 09:20:02 | 来源记录时间: 2026-03-06T09:17:40.193567+00:00 | records: 1 | skipped: 0</div>
+        <div class="category-overview"><span class="chip">融资并购 (3)</span><span class="chip">模型发布 (2)</span><span class="chip">硬件芯片 (2)</span><span class="chip">应用落地 (5)</span></div>
+      </header>
+      <section class="category-section"><div class="category-title-row"><span class="category-index">一、</span><span class="category-title">融资并购</span></div><article class="news-item"><h3>1. 64笔超1亿美元融资！从这16家“新晋AI顶流”，看懂硅谷的新逻辑</h3><p>文章盘点了近期硅谷AI领域的融资动态，指出有64笔融资额超过1亿美元的案例，并聚焦于16家新兴的明星AI公司，分析了其技术方向与商业模式所代表的行业新趋势。</p><div class="source">原始链接：</div><a class="source-link" href="https://m.ofweek.com/ai/2026-02/ART-201700-8420-30680485.html" target="_blank" rel="noopener noreferrer">https://m.ofweek.com/ai/2026-02/ART-201700-8420-30680485.html</a></article><article class="news-item"><h3>2. MiniMax完成超2.5亿美元新一轮融资，估值超12亿美元</h3><p>国内大模型公司MiniMax于6月1日完成了超过2.5亿美元的新一轮融资，公司估值超过12亿美元。文章同时指出，国内大模型应用正从通用模型转向行业模型。</p><div class="source">原始链接：</div><a class="source-link" href="https://huggingface.co/datasets/Skywork/ChineseDomainModelingEval/resolve/main/zh_tech.jsonl?download=true" target="_blank" rel="noopener noreferrer">https://huggingface.co/datasets/Skywork/ChineseDomainModelingEval/resolve/main/zh_tech.jsonl?download=true</a></article><article class="news-item"><h3>3. 跨赴科技完成数千万元Pre-A轮融资</h3><p>AI Coding初创公司跨赴科技完成数千万元人民币的Pre-A轮融资，本轮融资由复星锐正领投，奇绩创坛跟投。公司成立于2023年，专注于AI编程领域。</p><div class="source">原始链接：</div><a class="source-link" href="https://www.yepaisz.com/260.html" target="_blank" rel="noopener noreferrer">https://www.yepaisz.com/260.html</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">二、</span><span class="category-title">模型发布</span></div><article class="news-item"><h3>1. Meta AI 发布 Pixio 图像模型，不刷分反获更强跨任务能力</h3><p>Meta AI发布了新的图像模型Pixio。该模型的设计理念并非追求单一基准测试的高分，而是强调在实际多任务场景下的综合性能表现，据称获得了更强的跨任务能力。</p><div class="source">原始链接：</div><a class="source-link" href="http://frontiersonline.com/frontiers_news/" target="_blank" rel="noopener noreferrer">http://frontiersonline.com/frontiers_news/</a></article><article class="news-item"><h3>2. MiniMax正式开源MiniMax M2.1多语言编程模型</h3><p>MiniMax公司宣布将MiniMax M2.1多语言编程模型正式开源，模型已在Hugging Face和GitHub平台发布。该模型专为应对现实世界中的复杂编程任务而设计。</p><div class="source">原始链接：</div><a class="source-link" href="https://www.yepaisz.com/260.html" target="_blank" rel="noopener noreferrer">https://www.yepaisz.com/260.html</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">三、</span><span class="category-title">硬件芯片</span></div><article class="news-item"><h3>1. 微软公布第二代自研AI芯片“玛雅200”及配套软件工具</h3><p>微软公布了其第二代自研AI芯片“玛雅200”，同时推出了配套的软件工具。该芯片计划率先在美国艾奥瓦州的一座数据中心投入使用。</p><div class="source">原始链接：</div><a class="source-link" href="https://news.pedaily.cn/202601/560585.shtml" target="_blank" rel="noopener noreferrer">https://news.pedaily.cn/202601/560585.shtml</a></article><article class="news-item"><h3>2. Intel 18A 代工业务 2026 年敲定 4 家客户，2028 年起将大规模量产</h3><p>英特尔在其18A先进制程的代工业务方面取得进展，已确定在2026年获得4家客户，并计划从2028年开始进行大规模量产。</p><div class="source">原始链接：</div><a class="source-link" href="http://frontiersonline.com/frontiers_news/" target="_blank" rel="noopener noreferrer">http://frontiersonline.com/frontiers_news/</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">四、</span><span class="category-title">应用落地</span></div><article class="news-item"><h3>1. 腾讯元宝更新任务管理功能，创使用峰值，坐稳国内原生 AI 应用前三席位</h3><p>腾讯旗下的AI助手应用“元宝”进行了功能更新，新增了任务管理功能。此次更新创造了产品的使用峰值，并巩固了其作为国内头部原生AI应用的地位。</p><div class="source">原始链接：</div><a class="source-link" href="http://frontiersonline.com/frontiers_news/" target="_blank" rel="noopener noreferrer">http://frontiersonline.com/frontiers_news/</a></article><article class="news-item"><h3>2. 阿里通义千问首款AI眼镜在MWC全球首秀，Qwen 3.5系列包揽开源榜前四</h3><p>阿里巴巴的通义千问团队在移动通信大会（MWC）上全球首发了其首款AI眼镜。同时，其开源的Qwen 3.5系列模型包揽了Hugging Face开源排行榜的前四名。</p><div class="source">原始链接：</div><a class="source-link" href="https://www.gm7.org/archives/51711" target="_blank" rel="noopener noreferrer">https://www.gm7.org/archives/51711</a></article><article class="news-item"><h3>3. AI代码编辑器Cursor将默认大模型切换到Claude 3.5 Sonnet</h3><p>知名AI代码编辑器Cursor将其默认使用的大模型切换为Anthropic的Claude 3.5 Sonnet。Cursor的母公司Anysphere在成立初期曾从OpenAI融资800万美元。</p><div class="source">原始链接：</div><a class="source-link" href="https://cdjax.com/?p=680" target="_blank" rel="noopener noreferrer">https://cdjax.com/?p=680</a></article><article class="news-item"><h3>4. 去中心化云平台OORT获得微软投资</h3><p>去中心化云平台OORT宣布获得科技巨头微软的投资，具体投资金额未披露。</p><div class="source">原始链接：</div><a class="source-link" href="https://www.luyuan.io/%E6%96%87%E7%AB%A0%E5%BD%92%E6%A1%A3" target="_blank" rel="noopener noreferrer">https://www.luyuan.io/%E6%96%87%E7%AB%A0%E5%BD%92%E6%A1%A3</a></article><article class="news-item"><h3>5. ChatExcel一年完成3轮融资，构建全模态数据链路平台</h3><p>北大系AI公司元空智能（旗下产品ChatExcel）在一年内连续完成了Pre-A轮与A轮数千万元人民币的融资，投资方包括考拉基金与合鼎共资本。2026年，公司正致力于构建全模态数据链路平台。</p><div class="source">原始链接：</div><a class="source-link" href="https://www.yepaisz.com/260.html" target="_blank" rel="noopener noreferrer">https://www.yepaisz.com/260.html</a></article></section>
+    </article>
+  </div>
+</body>
+</html>
