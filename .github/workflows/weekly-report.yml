@@ -13,7 +13,7 @@ on:
 env:
   DIFY_APP_TYPE: chat
   DIFY_USER: github-actions-bot
-  DIFY_RESPONSE_MODE: blocking
+  DIFY_RESPONSE_MODE: streaming
   REPORT_AUTO_GENERATE: "true"
   REPORT_AUTO_OPEN: "false"
   REPORT_LATEST: "1"
