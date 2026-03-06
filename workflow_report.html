@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Weekly Report</title>
+  <style>
+    :root {
+      --bg: #f2f4f7;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --primary: #0b6aa6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+      padding: 20px;
+    }
+    .container { max-width: 860px; margin: 0 auto; }
+    .report-card {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      padding: 24px 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    }
+    .report-header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+    }
+    .report-header h1 {
+      margin: 0;
+      text-align: center;
+      font-size: clamp(30px, 4.2vw, 48px);
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: 0.4px;
+    }
+    .meta {
+      margin-top: 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .category-overview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      justify-content: center;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eef6fb;
+      color: #0b6aa6;
+      border: 1px solid #cde4f3;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .category-section { margin-top: 20px; }
+    .category-title-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 800;
+      color: var(--primary);
+      border-left: 4px solid var(--primary);
+      padding-left: 10px;
+    }
+    .news-item {
+      padding: 14px 0 18px;
+      border-bottom: 1px dashed #e6e6e6;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-item h3 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 2.8vw, 36px);
+      line-height: 1.45;
+    }
+    .news-item p {
+      margin: 0;
+      color: #374151;
+      font-size: clamp(20px, 2.3vw, 30px);
+    }
+    .source {
+      margin-top: 10px;
+      color: #9ca3af;
+      font-size: clamp(18px, 2vw, 26px);
+    }
+    .source-link {
+      color: #0b6aa6;
+      text-decoration: none;
+      font-size: clamp(18px, 2vw, 26px);
+      word-break: break-all;
+    }
+    .source-link:hover { text-decoration: underline; }
+    pre {
+      margin: 0;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      font-size: 12px;
+      overflow: auto;
+    }
+    @media (max-width: 768px) {
+      body { padding: 10px; line-height: 1.62; }
+      .report-card { padding: 14px 14px; border-radius: 10px; }
+      .report-header { margin-bottom: 12px; padding-bottom: 10px; }
+      .report-header h1 { font-size: 34px; line-height: 1.3; }
+      .meta { font-size: 11px; line-height: 1.5; word-break: break-word; }
+      .category-overview { margin-top: 10px; gap: 6px; }
+      .chip { font-size: 11px; padding: 3px 8px; }
+      .category-section { margin-top: 12px; }
+      .category-title-row {
+        font-size: 28px;
+        margin-bottom: 6px;
+        border-left-width: 3px;
+        padding-left: 8px;
+      }
+      .news-item { padding: 10px 0 12px; }
+      .news-item h3 { font-size: 24px; margin-bottom: 5px; line-height: 1.4; }
+      .news-item p { font-size: 19px; line-height: 1.55; }
+      .source { font-size: 17px; margin-top: 7px; }
+      .source-link { font-size: 17px; line-height: 1.45; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <article class="report-card">
+      <header class="report-header">
+        <h1>AI Weekly Report</h1>
+        <div class="meta">生成时间: 2026-03-05 16:56:17 | 来源记录时间: 2026-03-05T08:41:01.998436+00:00 | records: 20 | skipped: 0</div>
+        <div class="category-overview"><span class="chip">融资并购 (3)</span><span class="chip">模型发布 (3)</span><span class="chip">硬件芯片 (2)</span><span class="chip">应用落地-大健康 (5)</span><span class="chip">科研突破 (1)</span><span class="chip">行业监管 (1)</span></div>
+      </header>
+      <section class="category-section"><div class="category-title-row"><span class="category-index">一、</span><span class="category-title">融资并购</span></div><article class="news-item"><h3>1. 新一轮融资250亿美元；DeepMind CEO：中国头部AI企业只比 ... - 搜狐</h3><p>人工智能推理初创公司Baseten完成3亿美元融资，估值达到50亿美元，英伟达投资1.5亿美元。</p><div class="source">原始链接：</div><a class="source-link" href="https://www.sohu.com/a/979753777_116132" target="_blank" rel="noopener noreferrer">https://www.sohu.com/a/979753777_116132</a></article><article class="news-item"><h3>2. 新浪AI热点小时报丨2026年03月02日12时_今日实时AI热点速递</h3><p>亚马逊500亿美元投资OpenAI的细节曝光，包括隐藏条款。</p><div class="source">原始链接：</div><a class="source-link" href="https://k.sina.com.cn/article_7857201856_1d45362c001902ro24.html?from=tech" target="_blank" rel="noopener noreferrer">https://k.sina.com.cn/article_7857201856_1d45362c001902ro24.html?from=tech</a></article><article class="news-item"><h3>3. 每日AI简报- 野湃AI</h3><p>北京智谱华章技术股份有限公司在香港交易所上市，股票代码02513，成为全球大模型第一股。</p><div class="source">原始链接：</div><a class="source-link" href="https://www.yepaisz.com/260.html" target="_blank" rel="noopener noreferrer">https://www.yepaisz.com/260.html</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">二、</span><span class="category-title">模型发布</span></div><article class="news-item"><h3>1. 证券研究报告·行业深度报告·电子 东吴证券研究所 1 / 18 请务必阅读正文之后的免责声明部分 电子行业深度报告 端云协同驱动AI 入口重塑与硬件范式重构</h3><p>报告提到腾讯推出Qwen3-Max-Thinking旗舰推理模型和HunyuanImage 3.0-Instruct图像模型，强化复杂推理与图像编辑能力。</p><div class="source">原始链接：</div><a class="source-link" href="https://pdf.dfcfw.com/pdf/H3_AP202602271820094540_1.pdf" target="_blank" rel="noopener noreferrer">https://pdf.dfcfw.com/pdf/H3_AP202602271820094540_1.pdf</a></article><article class="news-item"><h3>2. 🤖 AI 资讯周报 | 2026年2月23日 - 2月28日 - 烟儿公主 - 博客园</h3><p>周报总结显示DeepSeek V4、Gemini 3.1 Pro等大模型发布。</p><div class="source">原始链接：</div><a class="source-link" href="https://www.cnblogs.com/toutiegongzhu/p/19666332" target="_blank" rel="noopener noreferrer">https://www.cnblogs.com/toutiegongzhu/p/19666332</a></article><article class="news-item"><h3>3. Lex Fridman硬核访谈：5万字讲述2026 AI全景报告 - 腾讯网</h3><p>访谈中提到Anthropic的Claude Opus4.5是当前顶流模型，在编程方面表现出色。</p><div class="source">原始链接：</div><a class="source-link" href="https://news.qq.com/rain/a/20260203A05CML00" target="_blank" rel="noopener noreferrer">https://news.qq.com/rain/a/20260203A05CML00</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">三、</span><span class="category-title">硬件芯片</span></div><article class="news-item"><h3>1. 证券研究报告·行业深度报告·电子 东吴证券研究所 1 / 18 请务必阅读正文之后的免责声明部分 电子行业深度报告 端云协同驱动AI 入口重塑与硬件范式重构</h3><p>报告分析端云协同驱动AI入口重塑与硬件范式重构的趋势。</p><div class="source">原始链接：</div><a class="source-link" href="https://pdf.dfcfw.com/pdf/H3_AP202602271820094540_1.pdf" target="_blank" rel="noopener noreferrer">https://pdf.dfcfw.com/pdf/H3_AP202602271820094540_1.pdf</a></article><article class="news-item"><h3>2. GitHub - Acmesec/theAIMythbook: Ai迷思录（应用与安全指南）</h3><p>开源项目介绍AI硬件基础，包括图形处理器（GPU）、张量处理器（TPU）、专用集成电路（ASIC）、现场可编程门阵列（FPGA）等。</p><div class="source">原始链接：</div><a class="source-link" href="https://github.com/Acmesec/theAIMythbook" target="_blank" rel="noopener noreferrer">https://github.com/Acmesec/theAIMythbook</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">四、</span><span class="category-title">应用落地-大健康</span></div><article class="news-item"><h3>1. FDA授权AI医疗设备的应用图谱：基于1016项审批数据的分类学研究 - 生物通</h3><p>基于1016项审批数据，研究FDA授权AI医疗设备的应用图谱。</p><div class="source">原始链接：</div><a class="source-link" href="https://www.ebiotrade.com/newsf/2025-7/20250702001655365.htm" target="_blank" rel="noopener noreferrer">https://www.ebiotrade.com/newsf/2025-7/20250702001655365.htm</a></article><article class="news-item"><h3>2. 2025年医疗人工智能发展现状 - CSDN博客</h3><p>数据显示AI在医疗中的应用提升效率，例如门诊报销时间从72小时降至2分18秒，效率提升99.95%。</p><div class="source">原始链接：</div><a class="source-link" href="https://blog.csdn.net/m0_52307083/article/details/149472377" target="_blank" rel="noopener noreferrer">https://blog.csdn.net/m0_52307083/article/details/149472377</a></article><article class="news-item"><h3>3. 电科金仓-成为世界卓越的数据库产品与服务提供商 ...</h3><p>金仓数据库助力临床试验数据管理，提供高性能、高安全的国产化解决方案，支持药物临床试验数据完整性。</p><div class="source">原始链接：</div><a class="source-link" href="https://kingbase.com.cn/archives/xZGyvCsDaRte" target="_blank" rel="noopener noreferrer">https://kingbase.com.cn/archives/xZGyvCsDaRte</a></article><article class="news-item"><h3>4. AI医疗器械全球合规系列（上篇）――美国篇：FDA和HHS的监管路径与合规解析- 卓纬研究-卓纬律师事务所</h3><p>解析FDA和HHS对AI医疗器械的监管路径与合规要求，包括预认证计划（PCCP）等。</p><div class="source">原始链接：</div><a class="source-link" href="https://chancebridge.com/article/?id=2800" target="_blank" rel="noopener noreferrer">https://chancebridge.com/article/?id=2800</a></article><article class="news-item"><h3>5. 2026年人工智能与医疗诊断综合题含答案.docx - 人人文库</h3><p>综合题涉及AI在医疗诊断中的应用，例如逻辑回归适用于预测并发症风险等分类问题。</p><div class="source">原始链接：</div><a class="source-link" href="https://www.renrendoc.com/paper/504606796.html" target="_blank" rel="noopener noreferrer">https://www.renrendoc.com/paper/504606796.html</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">五、</span><span class="category-title">科研突破</span></div><article class="news-item"><h3>1. 关于发布可解释、可通用的</h3><p>国家自然科学基金发布关于可解释、可通用AI的研究项目。</p><div class="source">原始链接：</div><a class="source-link" href="https://www.nsfc.gov.cn/p1/3381/2824/100371.html" target="_blank" rel="noopener noreferrer">https://www.nsfc.gov.cn/p1/3381/2824/100371.html</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">六、</span><span class="category-title">行业监管</span></div><article class="news-item"><h3>1. AI医疗器械全球合规系列（上篇）――美国篇：FDA和HHS的监管路径与合规解析- 卓纬研究-卓纬律师事务所</h3><p>详细解析FDA和HHS对AI医疗器械的监管路径、合规要求及预认证计划。</p><div class="source">原始链接：</div><a class="source-link" href="https://chancebridge.com/article/?id=2800" target="_blank" rel="noopener noreferrer">https://chancebridge.com/article/?id=2800</a></article></section>
+    </article>
+  </div>
+</body>
+</html>
