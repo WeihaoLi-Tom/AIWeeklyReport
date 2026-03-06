@@ -594,7 +594,10 @@ def run_once(cfg: AppConfig, run_index: int, conversation_id: Optional[str] = No
         run_record["error"] = str(ex)
         print(f"[run {run_index}] failed: {ex}", file=sys.stderr)
 
-    # Step 2: generate HTML report
+    # Step 2: save JSONL first (so report includes current run)
+    append_json_line(cfg.output_file, run_record)
+
+    # Step 3: generate HTML report
     if run_record.get("status") == "success" and cfg.report_auto_generate:
         html_ok = generate_html_report(
             script_dir=cfg.script_dir,
@@ -617,9 +620,6 @@ def run_once(cfg: AppConfig, run_index: int, conversation_id: Optional[str] = No
 
         # Step 5: open in browser (local dev convenience)
         maybe_open_report_in_browser(cfg.report_output_file, enabled=cfg.report_auto_open)
-
-    # Step 6: save JSONL (after optional presigned URL enrichment)
-    append_json_line(cfg.output_file, run_record)
 
     return run_record
 

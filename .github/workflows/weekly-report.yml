@@ -1,0 +1,87 @@
+# AI Weekly Report - Scheduled run and temporary link
+# Runs Dify workflow, generates HTML report, outputs temporary link (R2 presigned or Pages)
+
+name: AI Weekly Report
+
+on:
+  schedule:
+    # Run every Monday at 09:00 UTC (17:00 Beijing)
+    - cron: "0 9 * * 1"
+  workflow_dispatch:
+    # Allow manual trigger from Actions tab
+
+env:
+  DIFY_APP_TYPE: chat
+  DIFY_USER: github-actions-bot
+  DIFY_RESPONSE_MODE: blocking
+  REPORT_AUTO_GENERATE: "true"
+  REPORT_AUTO_OPEN: "false"
+  OUTPUT_FILE: workflow_runs.jsonl
+  REPORT_OUTPUT_FILE: workflow_report.html
+
+jobs:
+  run-report:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run Dify workflow scheduler
+        id: run-scheduler
+        env:
+          DIFY_BASE_URL: ${{ secrets.DIFY_BASE_URL }}
+          DIFY_API_KEY: ${{ secrets.DIFY_API_KEY }}
+          DIFY_APP_TYPE: ${{ secrets.DIFY_APP_TYPE || 'chat' }}
+          DIFY_QUERY: ${{ secrets.DIFY_QUERY }}
+          DIFY_INPUTS: ${{ secrets.DIFY_INPUTS }}
+          R2_ENABLED: ${{ secrets.R2_ENABLED }}
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
+          R2_KEY_PREFIX: ${{ secrets.R2_KEY_PREFIX }}
+          R2_PRESIGN_EXPIRES: ${{ secrets.R2_PRESIGN_EXPIRES }}
+        run: |
+          output=$(python dify_workflow_scheduler.py --mode once 2>&1)
+          echo "$output"
+          # Extract R2 presigned URL if present
+          url=$(echo "$output" | grep -oP '\[R2_LINK\]\Khttps?://[^\s]+' | tail -1)
+          if [ -n "$url" ]; then
+            echo "presigned_url=$url" >> $GITHUB_OUTPUT
+            echo "### Report link (temporary, expires in ~1h)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[Open report]($url)" >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v4
+        if: success() && hashFiles('workflow_report.html') != ''
+        with:
+          name: weekly-report-${{ github.run_id }}
+          path: workflow_report.html
+
+      - name: Prepare Pages deploy dir
+        if: success() && hashFiles('workflow_report.html') != ''
+        run: |
+          mkdir -p deploy
+          cp workflow_report.html deploy/index.html
+
+      - name: Deploy to GitHub Pages
+        if: success() && hashFiles('workflow_report.html') != ''
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: deploy
+          publish_branch: gh-pages
+          force_orphan: true
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          commit_message: "Deploy report ${{ github.run_id }}"
