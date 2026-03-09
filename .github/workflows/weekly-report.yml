@@ -117,3 +117,49 @@ jobs:
           echo "### Report link (GitHub Pages)" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "[Open report]($pages_url)" >> $GITHUB_STEP_SUMMARY
+
+      - name: Send report email
+        if: success() && steps.run-scheduler.outputs.presigned_url != ''
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          EMAIL_TO: ${{ vars.EMAIL_TO }}
+          EMAIL_FROM: ${{ vars.EMAIL_FROM }}
+          REPORT_URL: ${{ steps.run-scheduler.outputs.presigned_url }}
+        run: |
+          if [ -z "${RESEND_API_KEY:-}" ] || [ -z "${EMAIL_TO:-}" ] || [ -z "${EMAIL_FROM:-}" ]; then
+            echo "Email settings missing, skip sending email."
+            exit 0
+          fi
+          python - <<'PY'
+          import json
+          import os
+          import urllib.error
+          import urllib.request
+
+          payload = {
+              "from": os.environ["EMAIL_FROM"],
+              "to": [os.environ["EMAIL_TO"]],
+              "subject": "AI Weekly Report is ready",
+              "html": (
+                  "<p>Your AI Weekly Report is ready.</p>"
+                  f'<p><a href="{os.environ["REPORT_URL"]}">Open report</a></p>'
+              ),
+          }
+
+          req = urllib.request.Request(
+              "https://api.resend.com/emails",
+              data=json.dumps(payload).encode("utf-8"),
+              method="POST",
+              headers={
+                  "Authorization": f'Bearer {os.environ["RESEND_API_KEY"]}',
+                  "Content-Type": "application/json",
+              },
+          )
+
+          try:
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                  print(f"Email sent: {resp.status}")
+          except urllib.error.HTTPError as ex:
+              body = ex.read().decode("utf-8", errors="replace")
+              raise SystemExit(f"Email send failed: {ex.code} {body}")
+          PY
