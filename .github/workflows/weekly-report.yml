@@ -56,6 +56,7 @@ jobs:
           R2_BUCKET_NAME: ${{ secrets.R2_BUCKET_NAME }}
           R2_KEY_PREFIX: ${{ secrets.R2_KEY_PREFIX }}
           R2_PRESIGN_EXPIRES: ${{ secrets.R2_PRESIGN_EXPIRES }}
+          R2_PUBLIC_BASE_URL: ${{ vars.R2_PUBLIC_BASE_URL || secrets.R2_PUBLIC_BASE_URL }}
         run: |
           set -o pipefail
           python dify_workflow_scheduler.py --mode once 2>&1 | tee .ci-output/scheduler.log
@@ -67,12 +68,12 @@ jobs:
           url=$(grep -oE '\[R2_LINK\]https?://[^[:space:]]+' .ci-output/scheduler.log | sed 's/^\[R2_LINK\]//' | tail -1)
           r2_enabled=$(echo "${R2_ENABLED:-false}" | tr '[:upper:]' '[:lower:]')
           if [ "$r2_enabled" = "true" ] && [ -z "$url" ]; then
-            echo "R2 is enabled but no presigned URL was generated."
+            echo "R2 is enabled but no R2 link was generated."
             exit 1
           fi
           if [ -n "$url" ]; then
             echo "presigned_url=$url" >> $GITHUB_OUTPUT
-            echo "### Report link (temporary, expires in ~1h)" >> $GITHUB_STEP_SUMMARY
+            echo "### Report link (R2)" >> $GITHUB_STEP_SUMMARY
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "[Open report]($url)" >> $GITHUB_STEP_SUMMARY
           fi

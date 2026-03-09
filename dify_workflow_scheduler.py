@@ -525,7 +525,11 @@ def generate_presigned_url(bucket: str, key: str, expires: int = 3600, verify_ss
     return url
 
 
-def r2_upload_and_presign(
+def build_public_r2_url(base_url: str, key: str) -> str:
+    return f"{base_url.rstrip('/')}/{key.lstrip('/')}"
+
+
+def r2_upload_and_link(
     local_html: str,
     bucket: str,
     key_prefix: str,
@@ -534,6 +538,7 @@ def r2_upload_and_presign(
     now_str = dt.datetime.now(dt.timezone.utc).strftime("%Y%m%d_%H%M%S")
     object_key = f"{key_prefix}/report_{now_str}.html" if key_prefix else f"report_{now_str}.html"
     allow_insecure_fallback = parse_bool_env("R2_ALLOW_INSECURE_FALLBACK", default=True)
+    public_base_url = os.getenv("R2_PUBLIC_BASE_URL", "").strip()
 
     attempts = [True]
     if allow_insecure_fallback:
@@ -545,15 +550,22 @@ def r2_upload_and_presign(
             if not verify_ssl:
                 print("[R2] retrying with insecure SSL fallback...", file=sys.stderr)
             upload_to_r2(local_html, bucket, object_key, verify_ssl=verify_ssl)
-            presigned = generate_presigned_url(
+
+            if public_base_url:
+                public_url = build_public_r2_url(public_base_url, object_key)
+                print(f"[R2] Public URL:\n{public_url}")
+                print(f"[R2_LINK]{public_url}")
+                return public_url
+
+            presigned_url = generate_presigned_url(
                 bucket=bucket,
                 key=object_key,
                 expires=expires,
                 verify_ssl=verify_ssl,
             )
-            print(f"[R2] Presigned URL (valid {expires}s):\n{presigned}")
-            print(f"[R2_LINK]{presigned}")
-            return presigned
+            print(f"[R2] Presigned URL (valid {expires}s):\n{presigned_url}")
+            print(f"[R2_LINK]{presigned_url}")
+            return presigned_url
         except Exception as ex:
             last_error = ex
             message = str(ex)
@@ -563,7 +575,7 @@ def r2_upload_and_presign(
             break
 
     if last_error:
-        print(f"[R2] Upload/presign failed: {last_error}", file=sys.stderr)
+        print(f"[R2] Upload/link failed: {last_error}", file=sys.stderr)
     return None
 
 
@@ -683,7 +695,7 @@ def run_once(cfg: AppConfig, run_index: int, conversation_id: Optional[str] = No
 
         # Step 4: upload to R2 + generate presigned URL
         if html_ok and cfg.r2_enabled:
-            presigned = r2_upload_and_presign(
+            presigned = r2_upload_and_link(
                 local_html=cfg.report_output_file,
                 bucket=cfg.r2_bucket,
                 key_prefix=cfg.r2_key_prefix,
