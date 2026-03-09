@@ -5,8 +5,8 @@ name: AI Weekly Report
 
 on:
   schedule:
-    # Run every Monday at 09:00 UTC (17:00 Beijing)
-    - cron: "0 9 * * 1"
+    # Run every Monday at 01:00 UTC (09:00 Beijing)
+    - cron: "15 1 * * 1"
   workflow_dispatch:
     # Allow manual trigger from Actions tab
 
