@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Weekly Report</title>
+  <style>
+    :root {
+      --bg: #f2f4f7;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --primary: #0b6aa6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+      padding: 20px;
+    }
+    .container { max-width: 860px; margin: 0 auto; }
+    .report-card {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      padding: 24px 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    }
+    .report-header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+    }
+    .report-header h1 {
+      margin: 0;
+      text-align: center;
+      font-size: clamp(30px, 4.2vw, 48px);
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: 0.4px;
+    }
+    .meta {
+      margin-top: 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .category-overview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      justify-content: center;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eef6fb;
+      color: #0b6aa6;
+      border: 1px solid #cde4f3;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .category-section { margin-top: 20px; }
+    .category-title-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 800;
+      color: var(--primary);
+      border-left: 4px solid var(--primary);
+      padding-left: 10px;
+    }
+    .news-item {
+      padding: 14px 0 18px;
+      border-bottom: 1px dashed #e6e6e6;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-item h3 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 2.8vw, 36px);
+      line-height: 1.45;
+    }
+    .news-item p {
+      margin: 0;
+      color: #374151;
+      font-size: clamp(20px, 2.3vw, 30px);
+    }
+    .source {
+      margin-top: 10px;
+      color: #9ca3af;
+      font-size: clamp(18px, 2vw, 26px);
+    }
+    .source-link {
+      color: #0b6aa6;
+      text-decoration: none;
+      font-size: clamp(18px, 2vw, 26px);
+      word-break: break-all;
+    }
+    .source-link:hover { text-decoration: underline; }
+    pre {
+      margin: 0;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      font-size: 12px;
+      overflow: auto;
+    }
+    @media (max-width: 768px) {
+      body { padding: 10px; line-height: 1.62; }
+      .report-card { padding: 14px 14px; border-radius: 10px; }
+      .report-header { margin-bottom: 12px; padding-bottom: 10px; }
+      .report-header h1 { font-size: 34px; line-height: 1.3; }
+      .meta { font-size: 11px; line-height: 1.5; word-break: break-word; }
+      .category-overview { margin-top: 10px; gap: 6px; }
+      .chip { font-size: 11px; padding: 3px 8px; }
+      .category-section { margin-top: 12px; }
+      .category-title-row {
+        font-size: 28px;
+        margin-bottom: 6px;
+        border-left-width: 3px;
+        padding-left: 8px;
+      }
+      .news-item { padding: 10px 0 12px; }
+      .news-item h3 { font-size: 24px; margin-bottom: 5px; line-height: 1.4; }
+      .news-item p { font-size: 19px; line-height: 1.55; }
+      .source { font-size: 17px; margin-top: 7px; }
+      .source-link { font-size: 17px; line-height: 1.45; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <article class="report-card">
+      <header class="report-header">
+        <h1>AI Weekly Report</h1>
+        <div class="meta">生成时间: 2026-03-09 03:46:11 | 来源记录时间: 2026-03-09T03:45:23.498995+00:00 | records: 1 | skipped: 0</div>
+        <div class="category-overview"><span class="chip">系统提示 (1)</span></div>
+      </header>
+      <section class="category-section"><div class="category-title-row"><span class="category-index">一、</span><span class="category-title">系统提示</span></div><article class="news-item"><h3>1. 本周无有效搜索结果</h3><p>在指定的时间范围内（2026-03-09前后），当前提供的搜索结果为空白，未抓取到符合筛选条件的AI行业重大新闻事件。因此无法生成包含融资并购、模型发布、硬件芯片、应用落地、科研突破、行业监管等具体分类内容的报告。</p></article></section>
+    </article>
+  </div>
+</body>
+</html>
