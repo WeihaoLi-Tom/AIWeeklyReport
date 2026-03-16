@@ -1,0 +1,86 @@
+[
+    {
+    "category": "融资并购",
+    "title": "月之暗面旗下Kimi估值飙升至180亿美元，新一轮10亿美元融资进行中",
+    "url": "[https://www.21jingji.com/article/20260315/herald/cdf68585d0718b2f3d47efbe3c2fce2e.html](https://www.21jingji.com/article/20260315/herald/cdf68585d0718b2f3d47efbe3c2fce2e.html)",
+    "summary": "2026.03.14，据市场消息，国内大模型企业月之暗面（Moonshot AI）旗下AI助手Kimi估值已达180亿美元，三个月内翻了4倍。目前公司正进行新一轮10亿美元融资。其1月底发布的万亿参数模型Kimi K2.5及近期推出的Kimi Claw智能体集群带动了收入爆发式增长。"
+    },
+    {
+    "category": "融资并购",
+    "title": "江苏创投本周发生27起融资，总额约25.6亿元人民币",
+    "url": "[https://www.xhby.net/content/s69b3e6dfe4b0a737d394cce7.html](https://www.xhby.net/content/s69b3e6dfe4b0a737d394cce7.html)",
+    "summary": "2026.03.13，江苏省本周（3月9日至3月13日）共发生私募股权投融资事件27起，已披露总额约25.6亿元。在政策引导下，投融资重点集中在硬科技与人工智能产业，显示出资本市场对AI基础设施及上下游产业链的持续投入热度。"
+    },
+    {
+    "category": "模型发布",
+    "title": "Anthropic发布Claude Opus 4.6与Sonnet 4.6，开放百万上下文窗口",
+    "url": "[https://k.sina.com.cn/article_7857201856_1d45362c00190375qq.html?from=tech](https://k.sina.com.cn/article_7857201856_1d45362c00190375qq.html?from=tech)",
+    "summary": "2026.03.13，Anthropic宣布Claude Opus 4.6和Sonnet 4.6正式上线。此次更新核心在于全面开放100万Token的完整上下文窗口，并取消了长上下文附加费。Opus 4.6定价为每百万Token输入/输出分别为5美元和25美元，旨在增强超大规模文档处理能力。"
+    },
+    {
+    "category": "模型发布",
+    "title": "Kimi Claw功能升级，深度适配微博、企业微信及主流办公平台",
+    "url": "[https://www.21jingji.com/article/20260315/herald/cdf68585d0718b2f3d47efbe3c2fce2e.html](https://www.21jingji.com/article/20260315/herald/cdf68585d0718b2f3d47efbe3c2fce2e.html)",
+    "summary": "2026.03.09，月之暗面旗下Kimi Claw完成重大升级，正式内置微博与企业微信官方插件。用户可通过私信或远程指令操控智能体执行复杂任务，并适配了飞书、钉钉等平台。该产品基于Kimi K2.5 Thinking模型，支持Agent集群调度，标志着大模型从对话向自主执行演进。"
+    },
+    {
+    "category": "硬件芯片",
+    "title": "美国商务部拟对全球出口AI芯片实施许可制度",
+    "url": "[https://seekingalpha.com/news/4561704-us-said-consider-requiring-permits-for-global-ai-chip-sales-by-nvidia-and-amd](https://www.google.com/search?q=https://seekingalpha.com/news/4561704-us-said-consider-requiring-permits-for-global-ai-chip-sales-by-nvidia-and-amd)",
+    "summary": "2026.03.12，美国商务部起草新规，计划要求英伟达、AMD等公司在向全球任何地方运送先进AI加速器前必须获得政府许可。该框架建立分级许可体系，小规模部署进行简略审查，大规模部署需严格认证，旨在扩大对AI算力设施建设的全球管控范围。"
+    },
+    {
+    "category": "硬件芯片",
+    "title": "英伟达备战GTC 2026，AI芯片需求驱动股价持续走强",
+    "url": "[https://www.alphaspread.com/market-news/regulatory-actions/nvidia-and-amd-face-new-15-revenue-tax-on-ai-chip-sales-by-nvidia-and-amd](https://www.google.com/search?q=https://www.alphaspread.com/market-news/regulatory-actions/nvidia-and-amd-face-new-15-revenue-tax-on-ai-chip-sales-by-nvidia-and-amd)",
+    "summary": "2026.03.14，英伟达CEO黄仁勋即将在GTC年度开发者大会发表主题演讲，市场预期将披露Blackwell Ultra及下一代Rubin架构细节。截至3月9日当周，英伟达年营收增速达65%，股价过去一年上涨60%，显示出AI数据中心扩容对高性能GPU的依赖依然稳固。"
+    },
+    {
+    "category": "应用落地-大健康",
+    "title": "文元智能医生Dr. PAI 1.0发布，融合可穿戴血压监测与大模型",
+    "url": "[https://guangdong.eol.cn/gdgd/202603/t20260315_2722479.shtml](https://guangdong.eol.cn/gdgd/202603/t20260315_2722479.shtml)",
+    "summary": "2026.03.14，全球首个融合可穿戴连续血压监测、医生AI分身与LLM的高血压智能管理平台——文元智能医生（Dr. PAI）1.0正式发布。系统集成《高血压筛查与防治3000问》医学知识库，可实现24小时私人医生服务、风险识别及个性化干预，旨在提升慢病管理的专业可及性。"
+    },
+    {
+    "category": "应用落地-大健康",
+    "title": "Biophytis与LynxKite启动MASSIVE项目，AI驱动长寿药物研发",
+    "url": "[https://www.stocktitan.net/news/NBIS/biophytis-lynx-kite-alliance-expands-to-turbocharge-ai-driven-drug-w2vkp6n1m98y.html](https://www.stocktitan.net/news/NBIS/biophytis-lynx-kite-alliance-expands-to-turbocharge-ai-driven-drug-w2vkp6n1m98y.html)",
+    "summary": "2026.03.13，Biophytis与LynxKite宣布扩大合作，启动MASSIVE项目。该项目利用生成式AI技术针对Mas受体（MasR）进行分子模拟、合成与生物测试，旨在筛选治疗肌肉萎缩症（sarcopenia）的候选药物，通过AI计算模型将早期药物发现周期缩短至数月。"
+    },
+    {
+    "category": "应用落地-大健康",
+    "title": "英 silico Medicine 自研AI药物INS018_055获国家药监局突破性治疗品种认定",
+    "url": "[https://disruptive-concepts.com/predictions/ai-drug-phase3](https://disruptive-concepts.com/predictions/ai-drug-phase3)",
+    "summary": "2026.03.10，英矽智能（Insilico Medicine）开发的全球首款由AI发现并设计的药物INS018_055获得中国NMPA突破性治疗品种认定，用于治疗特发性肺纤维化（IPF）。该药物目前处于临床2期，早期数据显示出良好的安全性与初步疗效，标志着AI制药进入临床价值验证期。"
+    },
+    {
+    "category": "应用落地-大健康",
+    "title": "LLNL利用机器学习识别ALS老药新用候选物",
+    "url": "[https://www.hpcwire.com/aiwire/2026/03/13/jeonbuk-national-university-researchers-develop-ddinet-for-drug-drug-interaction-prediction/](https://www.hpcwire.com/aiwire/2026/03/13/jeonbuk-national-university-researchers-develop-ddinet-for-drug-drug-interaction-prediction/)",
+    "summary": "2026.03.12，劳伦斯利弗莫尔国家实验室（LLNL）主导的研究通过机器学习技术，结合退伍军人健康档案数据，识别出一种可用于治疗肌萎缩侧索硬化症（ALS）的候选药物。该研究展示了大数据与AI结合在加速罕见病治疗方案搜索中的实际应用价值。"
+    },
+    {
+    "category": "应用落地-大健康",
+    "title": "全北大学研发DDINet模型，精准预测药物间相互作用",
+    "url": "[https://www.hpcwire.com/aiwire/2026/03/13/jeonbuk-national-university-researchers-develop-ddinet-for-drug-drug-interaction-prediction/](https://www.hpcwire.com/aiwire/2026/03/13/jeonbuk-national-university-researchers-develop-ddinet-for-drug-drug-interaction-prediction/)",
+    "summary": "2026.03.13，韩国全北大学研究人员开发出DDINet深度学习模型。该模型专注于预测药物与药物之间的相互作用（DDI），能识别可能导致严重不良反应的药物组合。该成果对提高临床处方安全性及多药联用研究具有重要意义。"
+    },
+    {
+    "category": "科研突破",
+    "title": "哈佛大学Kempner研究所扩建AI超级算力集群",
+    "url": "[https://www.hpcwire.com/aiwire/2026/03/13/jeonbuk-national-university-researchers-develop-ddinet-for-drug-drug-interaction-prediction/](https://www.hpcwire.com/aiwire/2026/03/13/jeonbuk-national-university-researchers-develop-ddinet-for-drug-drug-interaction-prediction/)",
+    "summary": "2026.03.12，哈佛大学Kempner研究所宣布对其AI超级计算集群进行重大扩建。此次升级旨在支持神经科学与人工智能交叉领域的研究，探索模拟人类学习机制的大规模模型架构。新集群将提供更强的算力支持，加速多模态科学模型的训练。"
+    },
+    {
+    "category": "科研突破",
+    "title": "AWE 2026展示具身智能突破，扫地机器人实现自主爬楼梯",
+    "url": "[http://finance.people.com.cn/n1/2026/0314/c1004-40681931.html](http://finance.people.com.cn/n1/2026/0314/c1004-40681931.html)",
+    "summary": "2026.03.14，在中国家电及消费电子博览会（AWE2026）上，具身智能技术成为核心亮点。多家厂商展示了可识别食材新鲜度的冰箱及能自主攀爬楼梯的扫地机器人。这标志着物理AI代理在家庭环境下的环境感知与运动控制能力实现跨越式升级。"
+    },
+    {
+    "category": "行业监管",
+    "title": "欧盟理事会达成一致，简化AI监管规则并禁止生成色情内容",
+    "url": "[https://k.sina.com.cn/article_1893892941_70e2834d02001ydvk.html](https://www.google.com/search?q=https://k.sina.com.cn/article_1893892941_70e2834d02001ydvk.html)",
+    "summary": "2026.03.13，欧盟理事会就简化《人工智能法》监管框架提案达成一致。新规将高风险AI系统规则实施时间推迟16个月，以减轻企业合规压力；同时明确禁止利用人工智能生成未经许可的色情内容。此外，欧盟将强化AI办公室权力，以应对通用人工智能带来的新型风险。"
+    }
+    ]

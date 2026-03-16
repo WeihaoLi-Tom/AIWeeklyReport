@@ -370,7 +370,7 @@ def build_html(title: str, records: List[Dict[str, Any]], skipped: int) -> str:
     <article class="report-card">
       <header class="report-header">
         <h1>{html_escape(title)}</h1>
-        <div class="meta">生成时间: {html_escape(generated)} | 来源记录时间: {html_escape(started_at)} | records: {len(records)} | skipped: {skipped}</div>
+        
         {overview_html}
       </header>
       {article_html}
