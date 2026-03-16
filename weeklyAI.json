@@ -82,5 +82,78 @@
     "title": "欧盟理事会达成一致，简化AI监管规则并禁止生成色情内容",
     "url": "[https://k.sina.com.cn/article_1893892941_70e2834d02001ydvk.html](https://www.google.com/search?q=https://k.sina.com.cn/article_1893892941_70e2834d02001ydvk.html)",
     "summary": "2026.03.13，欧盟理事会就简化《人工智能法》监管框架提案达成一致。新规将高风险AI系统规则实施时间推迟16个月，以减轻企业合规压力；同时明确禁止利用人工智能生成未经许可的色情内容。此外，欧盟将强化AI办公室权力，以应对通用人工智能带来的新型风险。"
-    }
+    },
+        {
+          "category": "模型发布",
+          "title": "OpenAI发布GPT-5.4及推理优化版，支持百万级上下文",
+          "url": "https://openai.com/index/gpt-5-4-thinking-system-card/",
+          "summary": "2026.03.09，OpenAI正式推出GPT-5.4系列模型，包含GPT-5.4 Thinking推理优化版。该版本引入Tool Search系统，支持API版本100万Token上下文。基准测试显示，其在复杂任务中的响应错误率较GPT-5.2下降18%，单项主张错误率下降33%，显著提升了Agent模式下的执行效率与准确性。"
+        },
+        {
+          "category": "模型发布",
+          "title": "北大、字节跳动与Canva联合发布Helios视频生成模型",
+          "url": "https://arxiv.org/abs/2603.04379",
+          "summary": "2026.03.11，北大、字节跳动与Canva研究团队发布14B参数的Helios模型。该模型实现了在单张NVIDIA H100显卡上以19.5 FPS的实时速度生成视频，支持分钟级长视频生成。通过创新的训练策略模拟漂移，该模型在不使用自强制等启发式方法的情况下，解决了长视频画面漂移与运动重复的行业难题。"
+        },
+        {
+          "category": "模型发布",
+          "title": "阿里发布Qwen 3.5 Small系列，实现端侧离线运行突破",
+          "url": "https://github.com/QwenLM/Qwen3.5",
+          "summary": "2026.03.11，阿里通义实验室发布Qwen 3.5 Small系列，包含从0.8B至9B的多个参数版本。其中2B版本仅需4GB内存即可在手机端离线运行；9B版本在GPQA Diamond基准测试中获得81.7分，性能超越部分千亿级开源模型。该系列旨在推动智能体（Agent）在移动设备上的普及与大规模落地。"
+        },
+        {
+          "category": "硬件芯片",
+          "title": "特斯拉宣布Terafab超级工厂动工，聚焦2纳米AI芯片自主生产",
+          "url": "https://www.livemint.com/technology/tech-news/elon-musk-says-tesla-s-terafab-ai-chip-manufacturing-project-to-launch-next-week-11773498279882.html",
+          "summary": "2026.03.14，埃隆·马斯克宣布特斯拉“Terafab”芯片工厂将于一周内正式开工。该工厂规划采用2纳米制程，旨在将逻辑芯片、存储芯片及先进封装工艺整合在同一园区内，初期产能目标为每月10万片晶圆。此举旨在消除FSD自动驾驶系统及Optimus人形机器人的算力供应链瓶颈。"
+        },
+        {
+          "category": "应用落地-大健康",
+          "title": "微软推出消费级健康助手Copilot Health，整合全维度医疗数据",
+          "url": "https://thenextweb.com/news/microsoft-launches-copilot-health",
+          "summary": "2026.03.12，微软在HIMSS 2026大会发布“Copilot Health”。该工具作为Copilot的独立功能页，可整合50多种可穿戴设备数据与电子病历（EHR），为用户生成个人健康简报并协助诊前准备。目前该系统每日处理约5000万个健康咨询，是微软进军“医疗超级智能”领域的关键产品。"
+        },
+        {
+          "category": "应用落地-大健康",
+          "title": "苹果深化医疗布局，展示DICOM图像优化与临床合作成果",
+          "url": "https://healthtechmagazine.net/article/2026/03/himss26-why-health-systems-need-get-details-new-tech-adoption",
+          "summary": "2026.03.11，苹果VP Sumbul Ahmad Desai在HIMSS大会展示了DICOM医疗图像预设功能，允许医生在Apple硬件上优化CT、MRI影像的对比度。苹果同时预告与埃默里希兰代尔医院深化临床合作，利用AI和Epic系统集成简化医院工作流，推动从反应性医疗向主动性预防模式转型。"
+        },
+        {
+          "category": "应用落地-大健康",
+          "title": "马来西亚在16家大型医疗机构部署AI驱动的全院信息系统",
+          "url": "https://healthtechasia.co/malaysia-deploys-ai-hospital-system-across-16-facilities-in-healthcare-push/",
+          "summary": "2026.03.13，马来西亚卫生部宣布已在16家医院完成“全院信息系统（THIS）”部署，并将云端诊所管理系统覆盖全国2400多家基层机构。该系统引入AI诊断与实时数据仪表盘，加强了偏远地区的远程医疗能力。此举为马来西亚2026年465.2亿林吉特医疗预算中数字化转型的核心里程碑。"
+        },
+        {
+          "category": "应用落地-大健康",
+          "title": "埃及启动国家数字病理网络，利用AI加速癌症早期筛查",
+          "url": "https://www.cairo.gov.eg/en/Pages/Latestarticle.aspx?ArtID=9561",
+          "summary": "2026.03.09，埃及卫生部与罗氏诊断签署备忘录，建立覆盖全国的数字病理网络。首阶段连接埃及CDC等7处站点，利用AI分析数字化病理样本，旨在将癌症诊断准确率从85%提升至92%。系统预计将疑似病例的平均确诊周期从49天大幅缩短至28天，重点解决农村医疗资源匮乏问题。"
+        },
+        {
+          "category": "应用落地-大健康",
+          "title": "美国医学会调查显示医生使用AI比例翻倍，81%受访者已引入",
+          "url": "https://www.ama-assn.org/press-center/ama-press-releases/ama-ai-usage-among-doctors-doubles-confidence-technology-grows",
+          "summary": "2026.03.12，AMA发布《2026医生AI调查报告》，结果显示81%的美国医生已在专业中使用AI，较2023年的38%实现翻倍。医生平均使用2.3个场景，最集中在研究摘要与临床文档。76%受访者认为AI提升了护理能力。此外，70%的医生视AI为缓解职业倦怠的工具，但88%对潜在的技能流失表示担忧。"
+        },
+        {
+          "category": "科研突破",
+          "title": "上海交大DeepRare系统诊断率超越资深医生，覆盖全球600家机构",
+          "url": "https://article-factory.ai/news/deeprare-ai-beats-doctors-in-rare-disease-diagnosis",
+          "summary": "2026.03.09，上海交通大学研究团队在Nature子刊展示DeepRare罕见病诊断系统。实验显示其首选诊断准确率达64.4%，优于十年资历专家的54.6%；前三候选诊断准确率达79%。该系统整合40种专业诊断工具并实现白盒推理，已吸引全球超过600家医疗机构注册使用，有效缩短了罕见病确诊周期。"
+        },
+        {
+          "category": "行业监管",
+          "title": "国家互联网应急中心警示OpenClaw严重安全风险，严防密钥泄露",
+          "url": "https://news.cgtn.com/news/2026-03-10/China-s-internet-emergency-center-issues-OpenClaw-security-alert-1Lp96HIJQyY/p.html",
+          "summary": "2026.03.10，CNCERT/CC发布安全风险警示，指出OpenClaw智能体存在提示词注入及恶意插件（Skills）投毒风险。攻击者可诱导智能体读取含恶意指令的网页，进而窃取用户系统密钥或删除核心生产数据。官方建议用户利用容器技术严格隔离运行环境，并严审第三方插件来源。"
+        }
+      
+
+
+
+
+    
     ]
+    
