@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Weekly Report</title>
+  <style>
+    :root {
+      --bg: #f2f4f7;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --primary: #0b6aa6;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.75;
+      padding: 20px;
+    }
+    .container { max-width: 860px; margin: 0 auto; }
+    .report-card {
+      background: var(--card);
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      padding: 24px 28px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    }
+    .report-header {
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+    }
+    .report-header h1 {
+      margin: 0;
+      text-align: center;
+      font-size: clamp(30px, 4.2vw, 48px);
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: 0.4px;
+    }
+    .meta {
+      margin-top: 10px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+    }
+    .category-overview {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+      justify-content: center;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: #eef6fb;
+      color: #0b6aa6;
+      border: 1px solid #cde4f3;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .category-section { margin-top: 20px; }
+    .category-title-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 10px;
+      font-size: clamp(26px, 3.2vw, 38px);
+      font-weight: 800;
+      color: var(--primary);
+      border-left: 4px solid var(--primary);
+      padding-left: 10px;
+    }
+    .news-item {
+      padding: 14px 0 18px;
+      border-bottom: 1px dashed #e6e6e6;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-item h3 {
+      margin: 0 0 8px;
+      font-size: clamp(24px, 2.8vw, 36px);
+      line-height: 1.45;
+    }
+    .news-item p {
+      margin: 0;
+      color: #374151;
+      font-size: clamp(20px, 2.3vw, 30px);
+    }
+    .source {
+      margin-top: 10px;
+      color: #9ca3af;
+      font-size: clamp(18px, 2vw, 26px);
+    }
+    .source-link {
+      color: #0b6aa6;
+      text-decoration: none;
+      font-size: clamp(18px, 2vw, 26px);
+      word-break: break-all;
+    }
+    .source-link:hover { text-decoration: underline; }
+    pre {
+      margin: 0;
+      padding: 14px;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      font-size: 12px;
+      overflow: auto;
+    }
+    @media (max-width: 768px) {
+      body { padding: 10px; line-height: 1.62; }
+      .report-card { padding: 14px 14px; border-radius: 10px; }
+      .report-header { margin-bottom: 12px; padding-bottom: 10px; }
+      .report-header h1 { font-size: 34px; line-height: 1.3; }
+      .meta { font-size: 11px; line-height: 1.5; word-break: break-word; }
+      .category-overview { margin-top: 10px; gap: 6px; }
+      .chip { font-size: 11px; padding: 3px 8px; }
+      .category-section { margin-top: 12px; }
+      .category-title-row {
+        font-size: 28px;
+        margin-bottom: 6px;
+        border-left-width: 3px;
+        padding-left: 8px;
+      }
+      .news-item { padding: 10px 0 12px; }
+      .news-item h3 { font-size: 24px; margin-bottom: 5px; line-height: 1.4; }
+      .news-item p { font-size: 19px; line-height: 1.55; }
+      .source { font-size: 17px; margin-top: 7px; }
+      .source-link { font-size: 17px; line-height: 1.45; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <article class="report-card">
+      <header class="report-header">
+        <h1>AI Weekly Report</h1>
+        
+        <div class="category-overview"><span class="chip">融资并购 (2)</span><span class="chip">模型发布 (2)</span><span class="chip">硬件芯片 (2)</span><span class="chip">应用落地-大健康 (5)</span><span class="chip">科研突破 (2)</span><span class="chip">行业监管 (2)</span></div>
+      </header>
+      <section class="category-section"><div class="category-title-row"><span class="category-index">一、</span><span class="category-title">融资并购</span></div><article class="news-item"><h3>1. DeepSeek完成新一轮百亿级融资，估值超千亿</h3><p>AI公司深度求索（DeepSeek）宣布完成新一轮融资，金额达数百亿元人民币，由多家国际知名投资机构领投。本轮融资后，公司估值超过一千亿元，资金将主要用于通用人工智能（AGI）技术研发、大规模算力集群建设及国际市场拓展。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/deepseek-funding" target="_blank" rel="noopener noreferrer">https://example.com/deepseek-funding</a></article><article class="news-item"><h3>2. Anthropic获亚马逊追加投资50亿美元，深化云与模型合作</h3><p>亚马逊宣布向AI初创公司Anthropic追加投资50亿美元，这是继此前数十亿美元投资后的又一笔重大注资。双方的战略合作将进一步深化，Anthropic的Claude系列模型将更深度集成至亚马逊云科技（AWS）的全栈服务中。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/anthropic-amazon" target="_blank" rel="noopener noreferrer">https://example.com/anthropic-amazon</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">二、</span><span class="category-title">模型发布</span></div><article class="news-item"><h3>1. OpenAI正式发布GPT-5，多模态能力与复杂推理大幅提升</h3><p>OpenAI正式推出下一代大语言模型GPT-5。该模型在复杂推理、长上下文理解（支持128K tokens）及多模态交互（文本、图像、音频）方面有显著提升。根据内部基准测试，其在数学、代码及科学问答等多个专业领域的性能超越前代模型30%以上。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/gpt5-launch" target="_blank" rel="noopener noreferrer">https://example.com/gpt5-launch</a></article><article class="news-item"><h3>2. Mistral AI开源万亿参数MoE模型Mixtral 2，性能比肩顶级闭源模型</h3><p>法国AI公司Mistral AI开源了其最新混合专家模型Mixtral 2，参数量达万亿级别。在多项公开基准测试中，其性能与GPT-4、Claude 3等顶级闭源模型相当。模型采用Apache 2.0协议，可免费商用，预计将显著降低企业使用前沿大模型的成本。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/mixtral2-open" target="_blank" rel="noopener noreferrer">https://example.com/mixtral2-open</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">三、</span><span class="category-title">硬件芯片</span></div><article class="news-item"><h3>1. 英伟达发布新一代AI芯片B200，AI训练性能提升高达15倍</h3><p>英伟达在GTC大会上发布Blackwell架构的旗舰AI芯片B200。该芯片采用台积电4nm工艺，集成了2080亿个晶体管，并配备了192GB的HBM3e内存。与上一代H100相比，其在训练大型语言模型时的性能提升最高可达15倍，能耗降低显著。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/nvidia-b200" target="_blank" rel="noopener noreferrer">https://example.com/nvidia-b200</a></article><article class="news-item"><h3>2. Groq推出LPU推理卡集群，语言模型文本生成速度创纪录</h3><p>AI芯片公司Groq展示了其LPU（语言处理单元）推理卡组成的超大规模集群。在公开演示中，该集群运行开源大模型Mixtral 8x22B，实现了每秒超过1000 tokens的生成速度，为目前已知最快的大模型文本推理速度之一，主要面向高并发、低延迟的实时AI应用场景。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/groq-lpu-cluster" target="_blank" rel="noopener noreferrer">https://example.com/groq-lpu-cluster</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">四、</span><span class="category-title">应用落地-大健康</span></div><article class="news-item"><h3>1. 腾讯觅影推出AI辅助诊断系统4.0，获国家药监局三类医疗器械注册证</h3><p>腾讯旗下AI医学影像平台“腾讯觅影”发布全新4.0版本，其核心的肺结节、乳腺癌、糖尿病视网膜病变等多病种AI辅助诊断系统，已正式获得中国国家药品监督管理局（NMPA）颁发的三类医疗器械注册证。该系统已在全国超过500家医院部署，累计完成辅助诊断超2亿次。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/tencent-aidiag" target="_blank" rel="noopener noreferrer">https://example.com/tencent-aidiag</a></article><article class="news-item"><h3>2. 谷歌Health AI与梅奥诊所合作，AI模型精准预测急性肾损伤，提前48小时发出预警</h3><p>谷歌Health AI团队与梅奥诊所联合在《自然》子刊上发表研究成果，其开发的深度学习模型可通过分析电子健康记录中的时序数据，在患者出现临床症状前平均48小时，以超过90%的准确率预测住院病人发生急性肾损伤（AKI）的风险。该模型已进入临床验证阶段。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/google-health-aki" target="_blank" rel="noopener noreferrer">https://example.com/google-health-aki</a></article><article class="news-item"><h3>3. AI驱动的新冠变异株抗体药物发现平台取得突破，研发周期缩短70%</h3><p>由清华大学与华润医药联合研发的AI抗体发现平台宣布取得重大进展。针对最新流行的新冠变异株，该平台在45天内即完成了从靶点识别到先导抗体分子设计的全过程，相比传统方法，研发周期缩短约70%。所设计的抗体在体外实验中展现出极高的中和活性。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/ai-drug-covid" target="_blank" rel="noopener noreferrer">https://example.com/ai-drug-covid</a></article><article class="news-item"><h3>4. “AI数字心理医生”应用获批上市，为国内首个获得软件类医疗器械认证的数字化疗法产品</h3><p>由硅基智能研发的“暖心AI数字心理医生”应用通过广东省药品监督管理局审批，获得二类医疗器械软件注册证。这是国内首款针对轻中度焦虑、抑郁的数字化认知行为疗法（CBT）产品。该应用基于大语言模型，可提供7x24小时个性化心理辅导与干预。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/ai-psych-therapy" target="_blank" rel="noopener noreferrer">https://example.com/ai-psych-therapy</a></article><article class="news-item"><h3>5. IBM Watson Health与制药巨头签约，用AI加速肿瘤学临床试验患者招募</h3><p>IBM Watson Health宣布与一家全球前十的制药公司达成多年期合作协议。IBM将利用其AI平台，通过分析海量去标识化的电子病历和基因组学数据，帮助该药企精准匹配并加速其多项肿瘤创新药临床试验的患者招募，目标是将招募时间缩短40%。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/ibm-trial-recruit" target="_blank" rel="noopener noreferrer">https://example.com/ibm-trial-recruit</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">五、</span><span class="category-title">科研突破</span></div><article class="news-item"><h3>1. Meta发布CM3leon 2.0：单一模型实现高保真文本生成图像与视频</h3><p>Meta AI研究团队发布CM3leon 2.0模型，这是一个统一的基于Transformer的架构，首次在单一模型中实现了从文本生成高分辨率图像（1024x1024）和短视频（5秒）的能力。该模型在多模态理解和生成连贯性上设立了新的技术基准。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/meta-cm3leon2" target="_blank" rel="noopener noreferrer">https://example.com/meta-cm3leon2</a></article><article class="news-item"><h3>2. 斯坦福大学团队实现非侵入式脑电信号“读心”，AI解码准确率达80%</h3><p>斯坦福大学的研究人员在《自然-神经科学》上发表论文，展示了一种基于非侵入式脑电图（EEG）帽和AI解码系统的新方法。该系统能够以约80%的准确率，实时解码被试者心中默念的句子基本语义，为脑机接口（BCI）的实用化提供了新路径。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/stanford-mind-read" target="_blank" rel="noopener noreferrer">https://example.com/stanford-mind-read</a></article></section><section class="category-section"><div class="category-title-row"><span class="category-index">六、</span><span class="category-title">行业监管</span></div><article class="news-item"><h3>1. 欧盟《人工智能法案》全面生效，对高风险AI系统实施严格合规要求</h3><p>欧盟具有里程碑意义的《人工智能法案》结束过渡期，正式全面生效。法案对生物识别、关键基础设施、教育、就业等领域的“高风险”AI系统设置了严格的透明度、数据治理、人工监督和风险评估要求。违规企业将面临最高达全球营业额6%的罚款。</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/eu-ai-act-live" target="_blank" rel="noopener noreferrer">https://example.com/eu-ai-act-live</a></article><article class="news-item"><h3>2. 中国七部门联合印发《关于推动未来健康产业发展的意见》，明确支持AI在医疗领域创新应用</h3><p>中国国家发改委、卫健委、药监局等七部门联合印发《关于推动未来健康产业创新发展的实施意见》。意见明确提出，要支持人工智能技术在辅助诊断、新药研发、健康管理等领域的创新应用，并探索完善相关产品的审批与监管路径，加快建设一批AI医疗应用示范医院和区域。”</p><div class="source">原始链接：</div><a class="source-link" href="https://example.com/china-health-ai-policy" target="_blank" rel="noopener noreferrer">https://example.com/china-health-ai-policy</a></article></section>
+    </article>
+  </div>
+</body>
+</html>
